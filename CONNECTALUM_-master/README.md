@@ -2,207 +2,412 @@
 
 A full-stack alumni networking platform built with **React + Vite** (frontend) and **Express + Node.js + MongoDB** (backend).
 
----
-
-## Tech Stack
-
-| Layer     | Technology                        |
-|-----------|-----------------------------------|
-| Frontend  | React 18, Vite, React Router v7   |
-| Backend   | Node.js, Express 4                |
-| Database  | MongoDB + Mongoose                |
-| Auth      | JWT (jsonwebtoken + bcrypt)       |
-| Realtime  | Socket.IO (live chat)             |
-| Styling   | Pure CSS with CSS variables       |
+ConnectAlum is designed to bridge the gap between students and alumni through mentorship, professional networking, career opportunities, communities, resources, and direct communication.
 
 ---
 
-## Features
+## 🚀 Features
 
 ### 🏠 Home Page
+
+- Modern responsive landing page
 - Hero section with call-to-action
-- **Portal Selector** — prominent Student / Alumni cards with role-based routing
-- Features & stats sections
+- Student / Alumni portal selection
+- Platform features and statistics
+- Career-focused call-to-action section
+- Responsive design
+- Light / Dark mode
 
 ### 🎓 Student Portal
-- Browse alumni mentors (search by name, company, expertise)
-- View & register for events
-- Browse jobs & internships posted by alumni
+
+- Browse alumni mentors
+- Search mentors by name, company, and expertise
+- Discover career opportunities
+- Browse jobs and internships
+- Connect with alumni
+- Access educational and career resources
+- Participate in communities
+- Direct messaging
 
 ### 🏆 Alumni Portal
+
+- Alumni profile management
 - Register as a mentor
-- Post jobs & internships
-- Create & manage events
-- View alumni network
+- Connect with students
+- Post jobs and internships
+- Share resources
+- Participate in communities
+- Communicate with students and other alumni
+
+### 🤝 Mentorship
+
+- Discover alumni mentors
+- Search and filter mentors
+- View mentor information and expertise
+- Send connection requests
+- Manage professional connections
+
+### 💼 Jobs & Opportunities
+
+- Browse jobs and internships
+- Search and filter opportunities
+- Alumni can post job opportunities
+- View job details
+- Apply to opportunities
+- Track posted opportunities
+
+### 📚 Resources
+
+- Share educational and career resources
+- Browse resources by category
+- Search resources
+- Resource descriptions and external links
+- Like and interact with resources
+
+### 👥 Communities
+
+- Discover professional communities
+- Search communities
+- Create communities
+- Public and private communities
+- Join communities
+- Community discussions and posts
+- Like and interact with posts
+
+### 💬 Messaging
+
+- Direct messaging between users
+- Conversation inbox
+- Search users for new conversations
+- Message history
+- Responsive messaging interface
 
 ### 💬 Community Chat
-- Real-time chat via Socket.IO
-- Multiple rooms: General, Jobs & Careers, Tech Talk, Events
+
+- Real-time chat using Socket.IO
+- Multiple chat rooms
+- General discussions
+- Jobs & Careers
+- Tech Talk
+- Events
 
 ### 👤 Profile
-- View and edit your profile
-- Update skills, college, department, job role
+
+- View profile
+- Edit personal information
+- Update skills
+- Update college and department
+- Update professional information
+- Role-based profile information
+
+### 🔐 Authentication & Security
+
+- User registration and login
+- JWT authentication
+- Password hashing with bcrypt
+- Role-based access
+- Protected routes
+- Environment variables for sensitive credentials
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
 
-```
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, Vite, React Router |
+| Backend | Node.js, Express 4 |
+| Database | MongoDB + Mongoose |
+| Authentication | JWT + bcrypt |
+| Realtime | Socket.IO |
+| Styling | Pure CSS + CSS Variables |
+| Icons | Lucide React |
+| Notifications | React Hot Toast |
+| Version Control | Git + GitHub |
+
+---
+
+## 🏗️ Architecture
+
+```text
+                         CONNECTALUM
+                              │
+                 ┌────────────┴────────────┐
+                 │                         │
+             Students                   Alumni
+                 │                         │
+                 └────────────┬────────────┘
+                              │
+                              ▼
+                       React + Vite
+                         Frontend
+                              │
+                              │ REST API
+                              ▼
+                       Node + Express
+                          Backend
+                              │
+                  ┌───────────┴───────────┐
+                  │                       │
+                  ▼                       ▼
+               MongoDB                Socket.IO
+               Database              Real-time Chat
+📂 Project Structure
 connectalum/
+│
 ├── backend/
 │   ├── config/
-│   │   └── db.js              # MongoDB connection
+│   │   └── db.js
+│   │
 │   ├── models/
 │   │   ├── User.js
 │   │   ├── Job.js
 │   │   ├── Mentor.js
 │   │   ├── Event.js
 │   │   └── Registration.js
+│   │
 │   ├── controllers/
 │   │   ├── userController.js
 │   │   ├── jobController.js
 │   │   ├── mentorController.js
 │   │   └── eventController.js
+│   │
 │   ├── middleware/
-│   │   └── auth.js            # JWT auth middleware
+│   │   └── auth.js
+│   │
 │   ├── routes/
 │   │   ├── userRoute.js
 │   │   ├── jobRoute.js
 │   │   ├── mentorRoute.js
 │   │   ├── eventRoutes.js
 │   │   └── chatRoute.js
-│   ├── server.js              # Express + Socket.IO entry
-│   ├── .env                   # Your env vars
+│   │
+│   ├── server.js
 │   └── package.json
 │
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── PortalSelector/ # NEW — Student/Alumni homepage selector
-    │   │   ├── Hero/
-    │   │   ├── Navbar/
-    │   │   ├── Footer/
-    │   │   ├── LoginSignup/
-    │   │   ├── Jobs/
-    │   │   ├── Events/
-    │   │   ├── Mentors/
-    │   │   ├── MentorForm/
-    │   │   ├── Profile/
-    │   │   └── Chatroom/
-    │   ├── pages/
-    │   │   ├── Home/           # Hero + PortalSelector + Features
-    │   │   ├── Student/        # Find Mentors | Events | Jobs tabs
-    │   │   ├── Alumini/        # Alumni Network | Events | Post Jobs tabs
-    │   │   └── Chat/
-    │   ├── context/
-    │   │   └── StoreContext.jsx
-    │   ├── App.jsx
-    │   └── main.jsx
-    ├── .env
-    └── package.json
-```
-
----
-
-## Setup & Running
-
-### Prerequisites
-- Node.js 18+
-- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
-
----
-
-### 1. Backend Setup
-
-```bash
+├── frontend/
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── PortalSelector/
+│   │   │   ├── Hero/
+│   │   │   ├── Navbar/
+│   │   │   ├── Footer/
+│   │   │   ├── LoginSignup/
+│   │   │   ├── Jobs/
+│   │   │   ├── Events/
+│   │   │   ├── Mentors/
+│   │   │   ├── MentorForm/
+│   │   │   ├── Profile/
+│   │   │   └── Chatroom/
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Student/
+│   │   │   ├── Alumni/
+│   │   │   ├── Resources/
+│   │   │   ├── Communities/
+│   │   │   ├── Connections/
+│   │   │   ├── Messages/
+│   │   │   └── Chat/
+│   │   │
+│   │   ├── context/
+│   │   │   └── StoreContext.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   └── package.json
+│
+├── .gitignore
+└── README.md
+⚙️ Setup & Running
+Prerequisites
+Node.js 18+
+npm
+MongoDB or MongoDB Atlas
+Git
+1. Clone the Repository
+git clone https://github.com/Tannu15392/ConnectAlum.git
+cd ConnectAlum
+2. Backend Setup
 cd backend
 npm install
-```
 
-Edit `.env`:
-```env
+Create a .env file inside backend/:
+
 PORT=4000
 MONGO_URI=mongodb://localhost:27017/connectalum
 JWT_SECRET=your_secret_key_here
 ALLOWED_ORIGINS=http://localhost:5173
-```
 
-Start the server:
-```bash
-npm run dev     # development (nodemon)
-npm start       # production
-```
+Start the backend:
 
-Backend runs on: `http://localhost:4000`
+npm run dev
 
----
+For production:
 
-### 2. Frontend Setup
+npm start
 
-```bash
+Backend runs on:
+
+http://localhost:4000
+3. Frontend Setup
+
+Open another terminal:
+
 cd frontend
 npm install
-```
 
-Edit `.env`:
-```env
+Create a .env file inside frontend/:
+
 VITE_API_URL=http://localhost:4000/api
 VITE_SOCKET_URL=http://localhost:4000
-```
 
-Start the dev server:
-```bash
+Start the frontend:
+
 npm run dev
-```
 
-Frontend runs on: `http://localhost:5173`
+Frontend runs on:
 
----
+http://localhost:5173
+🔐 Environment Variables
+Backend
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+ALLOWED_ORIGINS=http://localhost:5173
+Frontend
+VITE_API_URL=http://localhost:4000/api
+VITE_SOCKET_URL=http://localhost:4000
 
-## API Endpoints
+Never commit .env files, database credentials, JWT secrets, or API keys to GitHub.
 
-### Auth
-| Method | Endpoint               | Description        |
-|--------|------------------------|--------------------|
-| POST   | /api/user/register     | Register new user  |
-| POST   | /api/user/login        | Login              |
-| GET    | /api/user/me           | Get own profile    |
-| PUT    | /api/user/profile      | Update profile     |
-| GET    | /api/user/alumni       | List all alumni    |
+🔌 API Endpoints
+Authentication & Users
+Method	Endpoint	Description
+POST	/api/user/register	Register new user
+POST	/api/user/login	Login
+GET	/api/user/me	Get own profile
+PUT	/api/user/profile	Update profile
+GET	/api/user/alumni	List alumni
+Jobs
+Method	Endpoint	Description
+GET	/api/jobs	Get all jobs
+POST	/api/jobs/create	Post a job
+GET	/api/jobs/myjobs	Get user's posted jobs
+DELETE	/api/jobs/:id	Delete a job
+Mentors
+Method	Endpoint	Description
+GET	/api/mentors	Get all mentors
+POST	/api/mentors/add	Register as mentor
+Events
+Method	Endpoint	Description
+GET	/api/events	Get all events
+POST	/api/events/create	Create an event
+POST	/api/events/register	Register for event
+GET	/api/events/:id	Get event by ID
+💬 Socket.IO Events
+Event	Description
+join_room	Join a chat room
+send_message	Send / broadcast a message
+receive_message	Receive messages
+chat_history	Receive previous chat history
+🗄️ MongoDB Atlas
 
-### Jobs
-| Method | Endpoint               | Description        |
-|--------|------------------------|--------------------|
-| GET    | /api/jobs              | Get all jobs       |
-| POST   | /api/jobs/create       | Post a job (auth)  |
-| GET    | /api/jobs/myjobs       | My posted jobs     |
-| DELETE | /api/jobs/:id          | Delete a job       |
+For cloud deployment, replace the local MongoDB URI with a MongoDB Atlas connection string:
 
-### Mentors
-| Method | Endpoint               | Description          |
-|--------|------------------------|----------------------|
-| GET    | /api/mentors           | Get all mentors      |
-| POST   | /api/mentors/add       | Register as mentor   |
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/connectalum?retryWrites=true&w=majority
+🔒 Security
 
-### Events
-| Method | Endpoint               | Description          |
-|--------|------------------------|----------------------|
-| GET    | /api/events            | Get all events       |
-| POST   | /api/events/create     | Create event (auth)  |
-| POST   | /api/events/register   | Register for event   |
-| GET    | /api/events/:id        | Get event by ID      |
+ConnectAlum implements:
 
-### Chat (Socket.IO)
-- `join_room` — join a chat room
-- `send_message` — broadcast a message
-- `receive_message` — listen for messages
-- `chat_history` — receive last 50 messages on join
+JWT-based authentication
+Password hashing with bcrypt
+Protected API routes
+Role-based access control
+Environment-based configuration
+.gitignore protection for secrets
+🌐 Deployment
 
----
+Production deployment architecture:
 
-## MongoDB Atlas (Cloud)
+                   GitHub
+                     │
+          ┌──────────┴──────────┐
+          │                     │
+          ▼                     ▼
+   Render Static Site     Render Web Service
+          │                     │
+          │ React/Vite          │ Node/Express
+          │                     │
+          └──────────┬──────────┘
+                     │
+                     ▼
+                MongoDB Atlas
+📸 Screenshots
+Home Page
 
-Replace `MONGO_URI` with your Atlas connection string:
-```
-MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/connectalum?retryWrites=true&w=majority
-```
+Add screenshot here.
+
+Student Portal
+
+Add screenshot here.
+
+Alumni Portal
+
+Add screenshot here.
+
+Mentors
+
+Add screenshot here.
+
+Jobs
+
+Add screenshot here.
+
+Resources
+
+Add screenshot here.
+
+Communities
+
+Add screenshot here.
+
+Messaging
+
+Add screenshot here.
+
+🚀 Future Improvements
+Real-time notifications
+Email notifications
+Advanced mentor recommendation system
+AI-powered mentor matching
+Advanced job recommendations
+Alumni verification
+Analytics dashboard
+Mobile application
+Enhanced recommendation engine
+👨‍💻 Author
+Tannu Chandola
+
+B.Tech Computer Science
+Graphic Era Hill University
+
+⭐ ConnectAlum
+
+Connecting Students, Alumni, and Opportunities.
+
+
+### Then save it
+
+Press:
+
+```text
+Ctrl + S
+
+Then run:
+
+git add README.md
+git commit -m "Update project README"
