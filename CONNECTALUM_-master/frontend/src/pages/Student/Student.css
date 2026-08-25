@@ -1,0 +1,190 @@
+/* =========================================================
+   CONNECTALUM — STUDENT PORTAL
+   ========================================================= */
+
+.student-page {
+  padding-top: var(--navbar-h);
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   PORTAL HERO
+   ========================================================= */
+
+.portal-hero {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(20, 184, 166, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #080D19 0%,
+      #111827 48%,
+      #3730A3 100%
+    );
+
+  padding: 80px 0;
+
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -100px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(91, 92, 226, 0.18);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.portal-hero-content {
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.portal-hero-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+  color: #FFFFFF;
+
+  letter-spacing: -0.02em;
+}
+
+.portal-hero-content p {
+  color: rgba(248, 250, 252, 0.76);
+
+  font-size: 1.05rem;
+
+  max-width: 560px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.portal-hero-btns {
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.portal-hero-btns .btn-primary {
+  background: var(--primary);
+
+  box-shadow:
+    0 8px 24px rgba(91, 92, 226, 0.28);
+}
+
+.portal-hero-btns .btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.portal-hero-btns .btn-outline {
+  color: #FFFFFF;
+
+  border-color: rgba(255, 255, 255, 0.38);
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.portal-hero-btns .btn-outline:hover {
+  color: #FFFFFF;
+
+  border-color: var(--secondary);
+
+  background: rgba(20, 184, 166, 0.12);
+}
+
+
+/* =========================================================
+   PORTAL TABS
+   ========================================================= */
+
+.portal-tabs-section {
+  padding: 48px 0;
+
+  background: var(--bg);
+}
+
+.portal-tabs-header {
+  margin-bottom: 32px;
+}
+
+.tab-panel {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .portal-hero {
+    padding: 64px 0;
+  }
+
+  .portal-hero-content {
+    gap: 16px;
+  }
+
+  .portal-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .portal-hero-content p {
+    font-size: 0.98rem;
+  }
+
+  .portal-tabs-section {
+    padding: 36px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-hero {
+    padding: 52px 0;
+  }
+
+  .portal-hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portal-hero-btns .btn {
+    width: 100%;
+  }
+}

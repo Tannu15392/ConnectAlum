@@ -1,0 +1,363 @@
+/* =========================================================
+   CONNECTALUM — CONNECTIONS / MY NETWORK
+   ========================================================= */
+
+.connections-page {
+  min-height: 100vh;
+
+  padding-top: var(--navbar-h);
+
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   CONNECTIONS HERO
+   ========================================================= */
+
+.connections-hero {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(20, 184, 166, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(227, 185, 95, 0.09),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #080D19 0%,
+      #111827 52%,
+      #3730A3 100%
+    );
+
+  padding: 3rem 0 2.5rem;
+
+  color: #fff;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.connections-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(91, 92, 226, 0.14);
+
+  filter: blur(12px);
+
+  pointer-events: none;
+}
+
+.connections-hero h1 {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+
+  font-weight: 800;
+
+  margin: 0 0 0.4rem;
+
+  color: #fff;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.connections-hero p {
+  color: rgba(255, 255, 255, 0.78);
+
+  margin: 0;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.connections-body {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 2rem 1.5rem;
+}
+
+
+/* =========================================================
+   CONNECTION TABS
+   ========================================================= */
+
+.conn-tabs {
+  display: flex;
+
+  gap: 4px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  padding: 4px;
+
+  margin-bottom: 2rem;
+
+  max-width: 400px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.conn-tabs .tab-btn {
+  flex: 1;
+
+  padding: 0.55rem;
+
+  border-radius: 7px;
+
+  font-weight: 600;
+
+  font-size: 0.88rem;
+
+  border: none;
+
+  background: none;
+
+  cursor: pointer;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.conn-tabs .tab-btn:hover:not(.active) {
+  color: var(--text);
+}
+
+.conn-tabs .tab-btn.active {
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   TAB COUNTS
+   ========================================================= */
+
+.tab-count {
+  background: var(--primary);
+
+  color: #fff;
+
+  border-radius: 999px;
+
+  font-size: 0.7rem;
+
+  padding: 1px 7px;
+}
+
+.pending-count {
+  background: var(--accent);
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   CONNECTION GRID
+   ========================================================= */
+
+.connections-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(260px, 1fr)
+    );
+
+  gap: 1rem;
+}
+
+
+/* =========================================================
+   CONNECTION CARD
+   ========================================================= */
+
+.conn-card {
+  padding: 1.4rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   CONNECTION AVATAR
+   ========================================================= */
+
+.conn-avatar {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: #fff;
+
+  font-size: 1.3rem;
+
+  font-weight: 800;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    0 6px 16px rgba(91, 92, 226, 0.16);
+}
+
+
+/* =========================================================
+   CONNECTION INFO
+   ========================================================= */
+
+.conn-info {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.conn-info h3 {
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  color: var(--text);
+
+  margin: 0;
+}
+
+.conn-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 0.78rem;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.conn-msg-btn {
+  margin-top: 6px;
+}
+
+.conn-respond-btns {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 6px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .connections-body {
+    padding: 1.5rem 1rem;
+  }
+
+  .connections-hero {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .connections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conn-tabs {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .conn-respond-btns {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .conn-respond-btns .btn {
+    width: 100%;
+  }
+}

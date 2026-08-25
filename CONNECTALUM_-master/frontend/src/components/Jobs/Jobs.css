@@ -1,0 +1,362 @@
+/* =========================================================
+   CONNECTALUM — JOBS & OPPORTUNITIES
+   ========================================================= */
+
+.jobs-wrapper {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.jobs-controls {
+  display: flex;
+  gap: 12px;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 24px;
+}
+
+.jobs-controls .search-bar {
+  flex: 1;
+  min-width: 200px;
+}
+
+.type-filters {
+  display: flex;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   JOB GRID
+   ========================================================= */
+
+.jobs-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   JOB CARD
+   ========================================================= */
+
+.job-card {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   JOB HEADER
+   ========================================================= */
+
+.job-header {
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   COMPANY AVATAR
+   ========================================================= */
+
+.job-company-avatar {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-light),
+      var(--secondary-light)
+    );
+
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-display);
+
+  font-size: 1.2rem;
+
+  font-weight: 800;
+
+  border: 1px solid rgba(91, 92, 226, 0.10);
+}
+
+
+/* =========================================================
+   JOB CONTENT
+   ========================================================= */
+
+.job-title {
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  margin-bottom: 4px;
+
+  color: var(--text);
+}
+
+.job-meta {
+  display: flex;
+
+  gap: 12px;
+
+  font-size: 0.8rem;
+
+  color: var(--text-muted);
+
+  flex-wrap: wrap;
+}
+
+.job-meta span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.job-badges {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 12px;
+}
+
+.job-desc {
+  font-size: 0.875rem;
+
+  color: var(--text-muted);
+
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.job-posted-by {
+  font-size: 0.8rem;
+
+  color: var(--text-muted);
+
+  margin-bottom: 12px;
+}
+
+.job-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: auto;
+}
+
+.job-time {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 0.8rem;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   JOB FORM
+   ========================================================= */
+
+.job-form {
+  padding: 28px;
+
+  margin-bottom: 24px;
+}
+
+.job-form h3 {
+  margin-bottom: 20px;
+}
+
+.job-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   APPLY MODAL
+   ========================================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(8, 13, 25, 0.68);
+
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 1rem;
+}
+
+.apply-modal {
+  width: 100%;
+
+  max-width: 500px;
+
+  padding: 1.75rem;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+
+  color: var(--text);
+}
+
+.apply-modal-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-bottom: 1.25rem;
+}
+
+.apply-modal-header h3 {
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  margin: 0 0 4px;
+
+  color: var(--text);
+}
+
+.apply-modal-header p {
+  font-size: 0.85rem;
+
+  color: var(--text-muted);
+
+  margin: 0;
+}
+
+.apply-modal-footer {
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: flex-end;
+
+  margin-top: 1rem;
+}
+
+.apply-modal .input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   APPLIED BADGE
+   ========================================================= */
+
+.applied-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  color: var(--secondary-dark);
+
+  background: var(--secondary-light);
+
+  border: 1px solid rgba(20, 184, 166, 0.24);
+
+  border-radius: 999px;
+
+  padding: 4px 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .job-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card {
+    padding: 20px;
+  }
+
+  .job-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
